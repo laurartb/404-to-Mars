@@ -1,0 +1,13 @@
+
+:root{
+    --background-color: #0b0c10;
+    --text-color: #7ff74c;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 50px;
+}
