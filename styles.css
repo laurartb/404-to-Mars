@@ -55,3 +55,37 @@ body {
 @keyframes blink {
     50% { border-color: transparent; }
 }
+
+.neon {
+  color: var(--text-color);
+  text-shadow:
+    0 0 5px   var(--text-color),
+    0 0 10px  var(--text-color),
+    0 0 15px  var(--text-color),
+    0 0 20px  var(--text-color);
+  animation: flicker 4s infinite alternate ease-in-out, jitter 4s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 22%, 40%, 45%, 100% { 
+    text-shadow:
+      0 0 2px   var(--text-color),
+      0 0 2px  var(--text-color),
+      0 0 4px  var(--text-color),
+      0 0 10px  var(--text-color);
+    opacity: 1;
+  }
+
+    20%, 21%, 41%, 44% { 
+        text-shadow: none;
+        opacity: 0.8;
+    }
+}
+@keyframes jitter {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 2px); }
+  80% { transform: translate(0px, -1px); }
+  100% { transform: translate(0); }
+}
