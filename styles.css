@@ -31,6 +31,8 @@ body {
     flex-direction: column;
     justify-content: center;
     font-size: large;
+    box-sizing: border-box;
+    align-items: center;
 }
 
 .caja {
@@ -166,3 +168,4 @@ body::before {
   width: 100%;
   text-align: center;
 }
+
