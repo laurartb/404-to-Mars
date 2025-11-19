@@ -3,6 +3,7 @@
     --background-color: #0b0c10;
     --text-color: #7ff74c;
     --family-font: 'Tektur', sans-serif;
+    --background-glitch: #1f2124;
 }
 
 .tektur {
@@ -49,7 +50,7 @@ body {
     white-space: nowrap;
     border-right: 2px solid var(--text-color);
     box-sizing: content-box;
-    animation: typing 4s steps(54, end) forwards, blink .7s step-end infinite;
+    animation: typing 10s steps(54, end) forwards, blink .7s step-end infinite;
 }
 
 @keyframes typing {
@@ -119,4 +120,46 @@ body {
     opacity: 0;
     visibility: hidden;
   }
+}
+
+/* efecto de scanline */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    var(--background-glitch) 0px,
+    var(--background-color) 1px,
+    transparent 2px
+  );
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* botones */
+.cmd {
+  display: block;
+  margin: 1vh auto;
+  width: fit-content;
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: .3s;
+}
+.cmd:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
