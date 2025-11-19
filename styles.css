@@ -38,6 +38,8 @@ body {
     margin-right: auto;
 }
 
+/* efecto de escritura */
+
 .escritura {
     display: inline-block;
     overflow: hidden;
@@ -55,6 +57,8 @@ body {
 @keyframes blink {
     50% { border-color: transparent; }
 }
+
+/* efectos de neón */
 
 .neon {
   color: var(--text-color);
@@ -88,4 +92,25 @@ body {
   60% { transform: translate(1px, 2px); }
   80% { transform: translate(0px, -1px); }
   100% { transform: translate(0); }
+}
+
+
+/* warning de carga */
+#loader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
