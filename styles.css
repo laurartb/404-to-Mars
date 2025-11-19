@@ -13,59 +13,43 @@
   font-style: normal;
 }
 
-h1 {
-  font-size: clamp(2rem, 10vw, 6rem);
-}
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--family-font);
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    font-size: auto;
     text-align: center;
-    margin-top: 30%;
-    align-items: flex-start;
-    padding: 5vh, 2rem;
+    padding: 20%;
 }
 
 .pantalla {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    position: relative;
 }
 
 .caja {
-    display: block;
-    position: sticky;
-    justify-self: center;
+    display: flex;
+    justify-content: center;
     width: fit-content;
-    padding: 5%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .escritura {
-    font-size: clamp(1rem, 5vw, 3rem);
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid var(--text-color);
-    box-sizing: border-box;
-    width: 0;
-    max-width: 90ch;
+    border-right: 2px solid var(--text-color);
+    box-sizing: content-box;
     animation: typing 4s steps(54, end) forwards, blink .7s step-end infinite;
 }
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 90ch; }
+    to { width: 100% }
 }
 
 @keyframes blink {
@@ -104,55 +88,4 @@ body {
   60% { transform: translate(1px, 2px); }
   80% { transform: translate(0px, -1px); }
   100% { transform: translate(0); }
-}
-
-#loader {
-  position: fixed;
-  inset: 0;
-  background: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  z-index: 9999;
-  overflow: hidden;
-  animation: fadeOut 2s forwards;
-}
-
-.glitch {
-    font-size: clamp(2rem, 12vw, 10rem);
-    position: relative;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
-}
-
-
-@media (max-width: 480px) {
-
-  body {
-    padding: 1rem; /* antes tenías 20%, eso rompe móviles */
-  }
-
-  h1.neon {
-    font-size: clamp(1.5rem, 8vw, 3rem);
-  }
-
-  .escritura {
-    font-size: clamp(0.9rem, 6vw, 2.3rem);
-  }
-
-  .glitch {
-    font-size: clamp(1.5rem, 18vw, 4.5rem);
-  }
-}
-
-
-@media (min-width: 1600px) {
-  .pantalla {
-    transform: scale(1.15);
-  }
 }
