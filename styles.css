@@ -32,11 +32,6 @@ body {
     font-size: large;
 }
 
-h1 {
-    font-size: 9rem;
-    margin-bottom: 20px;
-}
-
 .caja {
     display: flex;
     justify-content: center;
@@ -70,6 +65,8 @@ h1 {
 
 .neon {
   color: var(--text-color);
+  font-size: 9rem;
+  margin-bottom: 20px;
   text-shadow:
     0 0 5px   var(--text-color),
     0 0 10px  var(--text-color),
